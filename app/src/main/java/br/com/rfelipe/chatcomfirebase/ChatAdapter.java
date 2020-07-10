@@ -24,8 +24,7 @@ class ChatAdapter extends RecyclerView.Adapter <ChatViewHolder>{
         View v = inflater.inflate(R.layout.list_item, parent, false);
         return new ChatViewHolder(v);
     }
-    @Override
-    public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
+    @Override   public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
         Mensagem m = mensagens.get(position);
         holder.dataNomeTextView.setText(context.getString(R.string.data_nome, DateHelper.format(m.getData()), m.getUsuario()));
         holder.mensagemTextView.setText(m.getTexto());
